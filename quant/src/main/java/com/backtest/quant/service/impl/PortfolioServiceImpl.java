@@ -11,6 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
 
 import com.backtest.quant.dto.request.TradeEnterRequestDto;
 import com.backtest.quant.dto.request.TradeExitRequestDto;
@@ -36,7 +37,7 @@ public class PortfolioServiceImpl implements PortfolioService {
 
 	private float unusedCapital = startingCapital;
 
-	private static final Logger log = LoggerFactory.getLogger(PortfolioServiceImpl.class);
+//	private static final Logger log = LoggerFactory.getLogger(PortfolioServiceImpl.class);
 
 	@Override
 	public void enterTrade(TradeEnterRequestDto tradeEnterRequest) {
@@ -69,7 +70,7 @@ public class PortfolioServiceImpl implements PortfolioService {
 			TradeLog tradeLog = this.tradeLogger.get(tradeId);
 
 			if (tradeLog == null) {
-				log.warn("Trade not found for ID: {}", tradeId);
+//				log.warn("Trade not found for ID: {}", tradeId);
 				return;
 			}
 
